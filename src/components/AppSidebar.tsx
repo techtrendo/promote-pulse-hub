@@ -102,15 +102,15 @@ export function AppSidebar({ role }: AppSidebarProps) {
   const roleLabel = getRoleLabel(role);
 
   return (
-    <Sidebar className={`glass-strong border-r border-border/50 ${isCollapsed ? "w-16" : "w-64"}`} collapsible="icon">
-      <SidebarHeader className="border-b border-border/50 p-4">
+    <Sidebar className={`bg-white border-r ${isCollapsed ? "w-16" : "w-64"}`} collapsible="icon">
+      <SidebarHeader className="border-b p-4">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-primary/20 glow-primary">
+          <div className="p-2 rounded-lg bg-primary/10">
             <RoleIcon className="w-5 h-5 text-primary" />
           </div>
           {!isCollapsed && (
             <div>
-              <h2 className="font-bold text-lg gradient-text">Promote SMM</h2>
+              <h2 className="font-bold text-lg text-foreground">Promote SMM</h2>
               <p className="text-xs text-muted-foreground">{roleLabel}</p>
             </div>
           )}
@@ -132,7 +132,7 @@ export function AppSidebar({ role }: AppSidebarProps) {
                       className={({ isActive }) =>
                         `flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 ${
                           isActive
-                            ? "bg-primary/20 text-primary glow-primary"
+                            ? "bg-primary text-white"
                             : "hover:bg-secondary text-muted-foreground hover:text-foreground"
                         }`
                       }
